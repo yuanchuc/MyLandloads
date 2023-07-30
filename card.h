@@ -10,7 +10,7 @@ public:
     // 花色
     enum CardSuit
     {
-        Suit_Begin,
+        Suit_Begin = 0,
         Diamond,
         Club,
         Heart,
@@ -20,7 +20,7 @@ public:
     // 点数
     enum CardPoint
     {
-        Card_Begin,
+        Card_Begin = 0,
         Card_3,
         Card_4,
         Card_5,
