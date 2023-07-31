@@ -119,9 +119,13 @@ void GameControl::resetCardData()
     m_pendPlayer = nullptr;
 }
 
+//准备叫地主
 void GameControl::startLordCard()
 {
+    //虚函数(多态)
+    //面对玩家和机器人两种处理逻辑
     m_currPlayer->prepareCallLord();
+    emit playerStatusChanged(m_currPlayer,ThinkingForCallLord);
 }
 
 void GameControl::becomeLord(Player *player)

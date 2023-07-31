@@ -8,7 +8,7 @@ CardPanel::CardPanel(QWidget *parent)
 
 void CardPanel::setImage(QPixmap &front, QPixmap &back)
 {
-    this->m_back = front;
+    this->m_front = front;
     this->m_back = back;
 
     setFixedSize(m_front.size());

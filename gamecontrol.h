@@ -55,6 +55,8 @@ public:
     void clearPlayerScore();
 
 signals:
+    //通知玩家游戏状态变化
+    void playerStatusChanged(Player*player,PlayerStatus status);
 private:
     Robot *m_left;
     Robot *m_right;

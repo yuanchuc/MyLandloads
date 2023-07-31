@@ -56,9 +56,10 @@ private:
 bool lessSort(const Card& c1,const Card& c2);
 bool greaterSort(const Card& c1,const Card& c2);
 
+//以下重载用于自定义类型QSet
 //操作符重载[==]
 bool operator ==(const Card&left,const Card&right);
-
+bool operator <(const Card& c1, const Card& c2);
 //重写全局函数 qHash
 uint qHash(const Card&card);
 

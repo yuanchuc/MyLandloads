@@ -3,10 +3,11 @@
 Player::Player(QObject *parent)
     : QObject{parent}
 {
-
+    m_score = 0;
+    m_isWin = false;
 }
 
-Player::Player(QString name, QObject *parent)
+Player::Player(QString name, QObject *parent):Player(parent)
 {
     this->m_name = name;
 }
@@ -64,6 +65,11 @@ Player::Type Player::getType()
 void Player::setScore(int score)
 {
     this->m_score = score;
+}
+
+int Player::getScore()
+{
+    return m_score;
 }
 
 void Player::setWin(bool flag)

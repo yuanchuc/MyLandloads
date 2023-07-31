@@ -1,9 +1,15 @@
 #include "cards.h"
 #include<QRandomGenerator>
+#include<QDebug>
 #include<algorithm>
 Cards::Cards()
 {
 
+}
+
+Cards::Cards(const Card &card)
+{
+    add(card);
 }
 
 void Cards::add(const Card &card)
@@ -117,13 +123,17 @@ Card Cards::takeRandCard()
 CardList Cards::toCardList(SortType type)
 {
     CardList list;
-    for(auto card:this->m_cards){
-        list<< card;
+    for(auto it = m_cards.begin()+1; it != m_cards.end(); ++it)
+    {
+        list << *it;
     }
-    if(type == Asc){
-        std::sort(list.begin(),list.end(),lessSort);
-    }else if(type == Desc){
-        std::sort(list.begin(),list.end(),greaterSort);
+    if(type == Asc)
+    {
+        std::sort(list.begin(), list.end(), lessSort);
+    }
+    else if(type == Desc)
+    {
+        std::sort(list.begin(), list.end(), greaterSort);
     }
     return list;
 }

@@ -46,7 +46,7 @@ private:
     bool m_isfront;
     bool m_isSelect;
     Card card;
-    Player* m_owner;
+    Player* m_owner = nullptr;
 };
 
 #endif // CARDPANEL_H
